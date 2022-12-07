@@ -1,0 +1,22 @@
+version: '3.6'
+
+services:
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vollmed_api
+      MYSQL_USER: leonardo
+      MYSQL_PASSWORD: leonardo
+
+    volumes:
+      - ./data:/var/lib/mysql
+
+    ports:
+      - '3306:3306'
+
+#  adminer:
+#    image: adminer
+#    ports:
+#      - 8080:8080
